@@ -2,41 +2,45 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Fast creation your diplomas";
-}
+}  
 
 <div class="text-center">
     <h1 class="display-4">Быстрое создание дипломов</h1>
-    <form action="XlsxToXml.cs", method="POST">
+    <form>
         <div>Выберете файл xlsx, из которого необходимо извлечь поля.</div>
-        <input type="file" name="table_xlsx" />
+        <input type="file" accept=".xlsx, .xls" id="table_xlsx" />
         <p></p>
         <div>Выберете подложку диплома.</div>
-        <input type="file" name="img" />
+        <input type="file" accept=".png" id="img" />
         <p></p>
         <div>Укажите количество необходимых столбцов для извлечения.</div>
-        <select name="feild_count" size="1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
+        <select id="feild_count" size="1">
+            <option value="1">1</option>
+            <option value="2" selected="selected">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
         </select>
-        <p></p>
+        <!--кнопка submit - для отправки на другую страницу, button - для работы на этой -->
+        <input type="button" value="Далее" onclick="showFields()">
+        <div id="res"></div>
         <div>Укажите столбцы для извлечения.</div>
-        <script>
-            function ShowFields(name) {
-                document.getElementsByName(name).values;
-                while () {
-                    document.createElement.
-                }
+        <!--это на другую страницу - после парсирования, должны выводиться именно поля из документа -->
 
-            }
-        </script>
+        <p></p>
         <input type="submit" value="Далее">
     </form>
+    <script type="text/javascript">
+        function showFields() {
+            var sel = document.getElementById("feild_count");
+            var count = sel.selectedIndex + 1;
+            document.getElementById('res').innerHTML='Hello';
+            //отправка в прогу файлов и переход на следующую страницу с выбором полей и размещением их на листе
+        }
+    </script>
 </div>
