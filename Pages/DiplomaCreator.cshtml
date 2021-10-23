@@ -1,0 +1,26 @@
+﻿@page
+@model DiplomaCreator.Pages.Index2Model
+@{
+    <div class="validateclass=" text-center">
+        <h1 class="display-4">Быстрое создание дипломов</h1>
+        <form target="_self" method="post" id="mc-embedded-subscribe-form"
+              name="redactor-form" class="validate">
+            <select id="font" class="select">
+                <option style="font-family: Times New Roman" value="times new roman">Times New Roman</option>
+                <option style="font-family: Tahoma" value="tahoma">Tahoma</option>
+                <option style="font-family: Calibri" value="calibri">Calibri</option>
+                <option style="font-family: Consolas" value="Consolas">Consolas</option>
+                <option style="font-family: Comic sans ms" value="comic sans ms">Comic Sans MS</option>
+            </select>
+            <input type="number" id="pt" value="12" />
+            <input type="button" id="i" value="I" />
+            <input type="button" id="b" value="B" />
+            <input type="submit" id="fin" value="Создать" />
+            <br />
+            <img src="url" usemap="#имя_карты">
+            <map name="имя_карты">
+                <area /> <!--сюда надо как-то помещать подвижные поля -->
+            </map>
+        </form>
+    </div>
+    }
